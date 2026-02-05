@@ -157,4 +157,6 @@ Thumbs.db
 *.webm
 *.avi
 *.flv
+
+# Project documentation
 GEMINI.md
