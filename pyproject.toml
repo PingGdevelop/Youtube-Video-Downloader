@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "youtube-downloader-uix"
+version = "1.0.0"
+authors = [
+  { name="Yeliel", email="votre-email@example.com" },
+]
+description = "Une application graphique moderne pour télécharger des vidéos YouTube"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "yt-dlp",
+    "ttkbootstrap",
+    "Pillow",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/votre-compte/youtube-downloader"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["UIX*"]
