@@ -5,7 +5,7 @@ import threading
 import sys
 import os
 
-# Ajout du dossier UIX au path pour les imports si nécessaire
+# Adding the UIX folder to the path for imports if necessary
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from quality_checker import get_video_info, filter_formats
@@ -21,30 +21,30 @@ class YtDownloaderApp(ttk.Window):
         self.geometry("600x250")
         self.resizable(False, False)
 
-        # Chargement de l'icône
+        # Loading the icon
         try:
             icon_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "assets", "icon.png")
             img = tk.PhotoImage(file=icon_path)
             self.iconphoto(False, img)
         except Exception as e:
-            print(f"Impossible de charger l'icône : {e}")
+            print(f"Unable to load icon: {e}")
 
         self.url_var = tk.StringVar()
         self.progress_var = tk.DoubleVar()
-        self.status_var = tk.StringVar(value="Prêt")
+        self.status_var = tk.StringVar(value="Ready")
         self.video_info = None
 
-        # Initialisation de la vue principale
+        # Initializing the main view
         self.view = MainView(self, self.on_download_click, self.url_var, self.progress_var, self.status_var)
 
     def on_download_click(self):
         url = self.url_var.get().strip()
         if not url:
-            messagebox.showerror("Erreur", "Veuillez entrer une URL valide.")
+            messagebox.showerror("Error", "Please enter a valid URL.")
             return
 
         self.view.set_download_state(True)
-        self.status_var.set("Analyse de la vidéo...")
+        self.status_var.set("Analyzing video...")
         threading.Thread(target=self.process_video_info, args=(url,), daemon=True).start()
 
     def process_video_info(self, url):
@@ -52,12 +52,12 @@ class YtDownloaderApp(ttk.Window):
             self.video_info = get_video_info(url)
             self.after(0, self.open_type_popup)
         except Exception as e:
-            self.after(0, lambda: self.show_error(f"Erreur : {str(e)}"))
+            self.after(0, lambda: self.show_error(f"Error: {str(e)}"))
 
     def show_error(self, msg):
-        self.status_var.set("Erreur")
+        self.status_var.set("Error")
         self.view.set_download_state(False)
-        messagebox.showerror("Erreur", msg)
+        messagebox.showerror("Error", msg)
 
     def open_type_popup(self):
         TypeSelectionPopup(
@@ -82,7 +82,7 @@ class YtDownloaderApp(ttk.Window):
 
     def start_download(self, format_id, is_audio):
         self.view.show_progress(True)
-        self.status_var.set("Téléchargement...")
+        self.status_var.set("Downloading...")
         threading.Thread(target=self.run_download, args=(format_id, is_audio), daemon=True).start()
 
     def run_download(self, format_id, is_audio):
@@ -98,12 +98,12 @@ class YtDownloaderApp(ttk.Window):
             if total:
                 percent = (d.get('downloaded_bytes', 0) / total) * 100
                 self.after(0, lambda: self.progress_var.set(percent))
-                self.after(0, lambda: self.status_var.set(f"Téléchargement : {percent:.1f}%"))
+                self.after(0, lambda: self.status_var.set(f"Downloading: {percent:.1f}%"))
 
     def on_complete(self):
-        messagebox.showinfo("Succès", "Téléchargement terminé !")
+        messagebox.showinfo("Success", "Download completed!")
         self.view.show_progress(False)
-        self.status_var.set("Prêt")
+        self.status_var.set("Ready")
         self.url_var.set("")
         self.view.set_download_state(False)
 

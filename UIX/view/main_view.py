@@ -15,11 +15,11 @@ class MainView(ttk.Frame):
         self.create_widgets()
 
     def create_widgets(self):
-        # Titre
+        # Title
         lbl_title = ttk.Label(self, text="YouTube Downloader", font=("Helvetica", 16, "bold"))
         lbl_title.pack(pady=(0, 20))
 
-        # Zone Input
+        # Input Zone
         self.input_frame = ttk.Frame(self)
         self.input_frame.pack(fill=X, pady=10)
 
@@ -32,8 +32,8 @@ class MainView(ttk.Frame):
         self.lbl_status = ttk.Label(self, textvariable=self.status_var, font=("Helvetica", 9), bootstyle="info")
         self.lbl_status.pack(pady=(5, 10))
 
-        # Bouton
-        self.btn_download = ttk.Button(self, text="TÉLÉCHARGER", command=self.on_download_click, bootstyle="primary", width=20)
+        # Button
+        self.btn_download = ttk.Button(self, text="DOWNLOAD", command=self.on_download_click, bootstyle="primary", width=20)
         self.btn_download.pack(pady=10)
 
     def show_progress(self, show=True):

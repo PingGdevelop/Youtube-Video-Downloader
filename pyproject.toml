@@ -6,9 +6,9 @@ build-backend = "setuptools.build_meta"
 name = "youtube-downloader-uix"
 version = "1.0.0"
 authors = [
-  { name="Yeliel", email="votre-email@example.com" },
+  { name="Yeliel", email="your-email@example.com" },
 ]
-description = "Une application graphique moderne pour télécharger des vidéos YouTube"
+description = "A modern graphical application for downloading YouTube videos"
 readme = "README.md"
 requires-python = ">=3.8"
 classifiers = [
@@ -23,7 +23,7 @@ dependencies = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/votre-compte/youtube-downloader"
+"Homepage" = "https://github.com/your-account/youtube-downloader"
 
 [tool.setuptools.packages.find]
 where = ["."]

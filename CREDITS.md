@@ -1,7 +1,7 @@
-# Crédits
+# Credits
 
-Ce logiciel utilise les ressources suivantes :
+This software uses the following resources:
 
-- **Librairie de base** : [yt-dlp](https://github.com/yt-dlp/yt-dlp) (mentionnée comme Ytdll)
-- **Icône du logiciel** : Créée par [Flaticon](https://www.flaticon.com/)
-- **Interface Graphique** : [ttkbootstrap](https://ttkbootstrap.readthedocs.io/)
+- **Core Library**: [yt-dlp](https://github.com/yt-dlp/yt-dlp) (mentioned as Ytdll)
+- **Software Icon**: Created by [Flaticon](https://www.flaticon.com/)
+- **Graphical Interface**: [ttkbootstrap](https://ttkbootstrap.readthedocs.io/)

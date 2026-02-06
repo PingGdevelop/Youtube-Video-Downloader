@@ -1,51 +1,51 @@
 # YouTube Downloader Pro
 
-Une application graphique moderne et performante pour télécharger des vidéos et de l'audio depuis YouTube, construite avec Python, `yt-dlp` et `ttkbootstrap`.
+A modern and powerful graphical application for downloading videos and audio from YouTube, built with Python, `yt-dlp`, and `ttkbootstrap`.
 
 ![Icon](assets/icon.png)
 
-## 🚀 Fonctionnalités
+## 🚀 Features
 
-- **Téléchargement Vidéo** : Choisissez la résolution souhaitée (1080p, 720p, etc.).
-- **Téléchargement Audio** : Conversion automatique en MP3 haute qualité.
-- **Interface Moderne** : UI basée sur Bootstrap avec thème sombre.
-- **Barre de Progression** : Suivi en temps réel du téléchargement.
-- **Fusion Intelligente** : Combine automatiquement l'audio et la vidéo pour les hautes résolutions (via FFmpeg).
+- **Video Download**: Choose the desired resolution (1080p, 720p, etc.).
+- **Audio Download**: Automatic conversion to high-quality MP3.
+- **Modern Interface**: Bootstrap-based UI with dark theme.
+- **Progress Bar**: Real-time download tracking.
+- **Intelligent Merging**: Automatically combines audio and video for high resolutions (via FFmpeg).
 
 ## 🛠️ Installation
 
-### Prérequis
+### Prerequisites
 - Python 3.8+
-- **FFmpeg** (indispensable pour la fusion audio/vidéo et les formats 1080p+)
-  - Sur Fedora : `sudo dnf install ffmpeg`
-  - Sur Ubuntu/Debian : `sudo apt install ffmpeg`
+- **FFmpeg** (essential for audio/video merging and 1080p+ formats)
+  - On Fedora: `sudo dnf install ffmpeg`
+  - On Ubuntu/Debian: `sudo apt install ffmpeg`
 
-### Dépendances Python
+### Python Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### Problème courant sur Linux (Fedora/Ubuntu)
-Si vous rencontrez une erreur liée à `ImageTk`, installez le support Tkinter pour Pillow :
+### Common issue on Linux (Fedora/Ubuntu)
+If you encounter an error related to `ImageTk`, install the Tkinter support for Pillow:
 ```bash
 sudo dnf install python3-pillow-tk  # Fedora
-# ou
+# or
 sudo apt-get install python3-pil.imagetk  # Ubuntu
 ```
 
-## 📖 Utilisation
+## 📖 Usage
 
-Lancez simplement le script principal :
+Simply run the main script:
 ```bash
 python UIX/main.py
 ```
 
-1. Collez l'URL de la vidéo.
-2. Cliquez sur **TÉLÉCHARGER**.
-3. Choisissez le type (Vidéo ou Audio) puis la qualité.
+1. Paste the video URL.
+2. Click on **DOWNLOAD**.
+3. Choose the type (Video or Audio) then the quality.
 
-## 📜 Crédits
-Voir le fichier [CREDITS.md](./CREDITS.md) pour plus de détails sur les bibliothèques et ressources utilisées.
+## 📜 Credits
+See the [CREDITS.md](./CREDITS.md) file for more details on the libraries and resources used.
 
-## ⚖️ Licence
-Ce projet est sous licence MIT. Voir le fichier [LICENSE](./LICENSE) pour plus de détails.
+## ⚖️ License
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more details.

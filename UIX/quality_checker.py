@@ -1,7 +1,7 @@
 import yt_dlp
 
 def get_video_info(url):
-    """Extrait les informations de la vidéo sans la télécharger."""
+    """Extracts video information without downloading it."""
     ydl_opts = {
         'quiet': True,
         'no_warnings': True,
@@ -10,7 +10,7 @@ def get_video_info(url):
         return ydl.extract_info(url, download=False)
 
 def filter_formats(info):
-    """Filtre et retourne une liste de formats vidéo exploitables."""
+    """Filters and returns a list of usable video formats."""
     formats = info.get('formats', [])
     available_formats = []
     seen_res = set()
@@ -31,6 +31,6 @@ def filter_formats(info):
                 })
                 seen_res.add(height)
 
-    # Tri par résolution (plus haute en premier)
+    # Sort by resolution (highest first)
     available_formats.sort(key=lambda x: x['height'], reverse=True)
     return available_formats

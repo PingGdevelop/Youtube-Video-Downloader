@@ -1,7 +1,7 @@
 import yt_dlp
 
 def download_media(url, format_id, is_audio, progress_callback):
-    """Gère le téléchargement de la vidéo ou de l'audio."""
+    """Handles video or audio downloading."""
     
     def internal_hook(d):
         if progress_callback:
