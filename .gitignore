@@ -160,3 +160,7 @@ Thumbs.db
 
 # Project documentation
 GEMINI.md
+
+# Opencode files
+opencode.json
+.opencode/
